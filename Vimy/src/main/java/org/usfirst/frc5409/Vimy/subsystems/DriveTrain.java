@@ -85,7 +85,7 @@ public class DriveTrain extends Subsystem {
                 
                 
         
-        robotDiffDrive = new DifferentialDrive(left_canSpeedGroup, m_leftDriveFront_talonSRX_C20);
+        robotDiffDrive = new DifferentialDrive(left_canSpeedGroup, right_canSpeedGroup);
         addChild("robotDiffDrive",robotDiffDrive);
         robotDiffDrive.setSafetyEnabled(true);
         robotDiffDrive.setExpiration(0.1);
