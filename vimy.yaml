@@ -69,7 +69,7 @@ Children:
               validators: *id002
               value: '23'
           Base: Talon SRX
-          Name: m_rightDriveFront_talonSRX_C23
+          Name: m_rightDriveRear_talonSRX_C23
         Properties:
           MasterSpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
             default: 0
@@ -88,7 +88,7 @@ Children:
             name: SpeedController2
             type: PIDOutput
             validators: *id004
-            value: m_rightDriveFront_talonSRX_C23
+            value: m_rightDriveRear_talonSRX_C23
         Base: CAN Speed Controller Group
         Name: right_canSpeedGroup
       Properties:
@@ -247,7 +247,7 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: ArcadeDrive}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
@@ -1130,6 +1130,28 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Autonomous Command
+  - Children: []
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: DriveTrain}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id042 []
+        name: Parameter presets
+        validators: null
+        value: *id042
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: ArcadeDrive
   Properties: {}
   Base: Commands
   Name: Commands
@@ -1151,9 +1173,9 @@ Properties:
     name: Export Subsystems, validators: null, value: true}
   Simulation World File: !!robotbuilder.data.properties.StringProperty {default: /usr/share/frcsim/worlds/GearsBotDemo.world,
     name: Simulation World File, validators: null, value: /usr/share/frcsim/worlds/GearsBotDemo.world}
-  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\chris\',
+  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\GWSS-Student\',
     extension: null, folder: true, name: Wiring file location, validators: null, value: 'C:\Users\chris\'}
-  Export Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\chris\FRCProjects',
+  Export Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\GWSS-Student\FRCProjects',
     extension: null, folder: true, name: Export Directory, validators: null, value: .\}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
