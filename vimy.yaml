@@ -69,7 +69,7 @@ Children:
               validators: *id002
               value: '23'
           Base: Talon SRX
-          Name: m_rightDriveFront_talonSRX_C23
+          Name: m_rightDriveRear_talonSRX_C23
         Properties:
           MasterSpeedController1: !!robotbuilder.data.properties.ChildSelectionProperty
             default: 0
@@ -88,7 +88,7 @@ Children:
             name: SpeedController2
             type: PIDOutput
             validators: *id004
-            value: m_rightDriveFront_talonSRX_C23
+            value: m_rightDriveRear_talonSRX_C23
         Base: CAN Speed Controller Group
         Name: right_canSpeedGroup
       Properties:
