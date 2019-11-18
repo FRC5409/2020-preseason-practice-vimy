@@ -138,8 +138,9 @@ public class DriveTrain extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void manualDrive(int ) {
-
+    public void manualDrive(double rightTrigger, double leftTrigger, double turn) {
+        double accelerate = rightTrigger - leftTrigger;
+        robotDiffDrive.arcadeDrive(accelerate, turn);
     }
 }
 
