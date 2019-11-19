@@ -12,6 +12,8 @@
 package org.usfirst.frc5409.Vimy;
 
 import org.usfirst.frc5409.Vimy.commands.*;
+
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
@@ -20,11 +22,17 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    //// CREATING BUTTONS
+    Joystick driverController = new Joystick(1);
+    
+    public double GetDriverRawAxis(){
+        return driverController.getYAxis(2);
+
+    }
+   
+     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-    // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
 
     // There are a few additional built in buttons you can use. Additionally,
