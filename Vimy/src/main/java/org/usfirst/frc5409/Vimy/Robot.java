@@ -38,7 +38,7 @@ public class Robot extends TimedRobot {
     public static Shoulder shoulder;
     public static Elbow elbow;
     public static Wrist wrist;
-    public static EndEffector endEffector;
+    public static EndEffector endEffector = new EndEffector();
     public static Climber climber;
     public static Vision vision;
     public static Pneumatics pneumatics;
