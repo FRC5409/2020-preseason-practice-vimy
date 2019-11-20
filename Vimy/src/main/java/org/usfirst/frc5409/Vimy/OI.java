@@ -28,7 +28,6 @@ public class OI {
     
     public double GetDriverRawAxis(int axis){
         return driverController.getRawAxis(axis);
-
     }
    
      //// CREATING BUTTONS
