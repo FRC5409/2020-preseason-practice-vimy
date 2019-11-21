@@ -43,7 +43,7 @@ public class DriveTrain extends Subsystem {
     private WPI_TalonSRX m_leftDriveRear_talonSRX_C21;
     private SpeedControllerGroup left_canSpeedGroup;
     private WPI_TalonSRX m_rightDriveFront_talonSRX_C22;
-    private WPI_TalonSRX m_rightDriveFront_talonSRX_C23;
+    private WPI_TalonSRX m_rightDriveRear_talonSRX_C23;
     private SpeedControllerGroup right_canSpeedGroup;
     private DifferentialDrive robotDiffDrive;
     private DoubleSolenoid d_leftShiftSoleniod;
@@ -74,18 +74,18 @@ public class DriveTrain extends Subsystem {
         
         
         
-        m_rightDriveFront_talonSRX_C23 = new WPI_TalonSRX(23);
+        m_rightDriveRear_talonSRX_C23 = new WPI_TalonSRX(23);
         
         
         
         
         
         //Set SlaveSpeedControllers to Follow MasterSpeedController
-        m_rightDriveFront_talonSRX_C23.follow(m_rightDriveFront_talonSRX_C22);
+        m_rightDriveRear_talonSRX_C23.follow(m_rightDriveFront_talonSRX_C22);
                 
                 
         
-        robotDiffDrive = new DifferentialDrive(left_canSpeedGroup, right_canSpeedGroup);
+        robotDiffDrive = new DifferentialDrive(m_leftDriveFront_talonSRX_C20, m_rightDriveFront_talonSRX_C22);
         addChild("robotDiffDrive",robotDiffDrive);
         robotDiffDrive.setSafetyEnabled(true);
         robotDiffDrive.setExpiration(0.1);
