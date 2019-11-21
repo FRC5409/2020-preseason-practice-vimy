@@ -14,6 +14,9 @@ public class MoveSequence extends CommandGroup {
    * Add your docs here.
    */
   public MoveSequence() {
+    addSequential(new Move(2, 0.5, 0.5));
+    addSequential(new Move(6, -0.7, 0));
+    addSequential(new Move(3, 0.3, -0.3));
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
