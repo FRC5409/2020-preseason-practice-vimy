@@ -10,44 +10,46 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class TankDrive extends Command {
-  public TankDrive() {
-    // Use requires() here to declare subsystem dependencies
-    requires(Robot.driveTrain);
+public class MoveWrist extends Command {
+
+  double m_time;
+  double m_speed;
+
+  public MoveWrist(double time, double speed) {
+
+    m_time = time;
+    m_speed = speed;
+    
+    requires(Robot.wrist);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.wrist.setWristMotor(m_speed);
+    setTimeout(m_time);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftStickY = Robot.m_oi.GetDriverAxis(1);
-    double rightStickY = Robot.m_oi.GetDriverAxis(5);
-
-    Robot.driveTrain.setLeftMotors(leftStickY);
-    Robot.driveTrain.setRightMotors(rightStickY);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return isTimedOut();
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.driveTrain.setLeftMotors(0);
-    Robot.driveTrain.setRightMotors(0);
+    Robot.wrist.setWristMotor(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end(); 
   }
 }

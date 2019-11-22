@@ -10,7 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.MoveSequence;
+import frc.robot.commands.DepositBall;
+import frc.robot.commands.PickupBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,13 +21,15 @@ public class OI {
 
   private XboxController driverController = new XboxController(1);
   Button xButton = new JoystickButton(driverController, 3);
-
-  public double GetRawDriverAxis(int axis) {
+  Button yButton = new JoystickButton(driverController, 2);
+  
+  public double GetDriverAxis(int axis) {
     return driverController.getRawAxis(axis);
   }
 
   public OI() {
-    xButton.whenPressed(new MoveSequence());
+    xButton.whenPressed(new PickupBall());
+    yButton.whenPressed(new DepositBall());
   }
 
 

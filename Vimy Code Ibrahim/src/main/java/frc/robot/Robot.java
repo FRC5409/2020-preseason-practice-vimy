@@ -10,6 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Elbow;
+import frc.robot.subsystems.EndEffector;
 import frc.robot.subsystems.Wrist;
 
 /**
@@ -23,6 +25,8 @@ import frc.robot.subsystems.Wrist;
 public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain();
   public static Wrist wrist = new Wrist();
+  public static Elbow elbow = new Elbow();
+  public static EndEffector endEffector = new EndEffector();
   public static OI m_oi;
   
 

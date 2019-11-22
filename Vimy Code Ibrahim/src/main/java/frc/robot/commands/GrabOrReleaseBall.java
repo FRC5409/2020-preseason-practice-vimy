@@ -10,32 +10,41 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class MoveToPickupBall extends Command {
-  public MoveToPickupBall() {
-    // Use requires() here to declare subsystem dependencies
-    requires(Robot.wrist);
+public class GrabOrReleaseBall extends Command {
+  
+  double m_time;
+  double m_speed;
+
+  public GrabOrReleaseBall(double time, double speed) {
+
+    m_time = time;
+    m_speed = speed;
+
+    requires(Robot.endEffector);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.endEffector.moveBall(m_speed);
+    setTimeout(m_time);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.wrist.wristPosition(70);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return isTimedOut();
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.endEffector.moveBall(0);
   }
 
   // Called when another command which requires one or more of the same
