@@ -18,8 +18,8 @@ import frc.robot.commands.MoveSequence;
  */
 public class OI {
 
-  private XboxController driverController = new XboxController(RobotMap.driverControllerPort);
-  Button xButton = new JoystickButton(driverController, RobotMap.buttonX);
+  private XboxController driverController = new XboxController(1);
+  Button xButton = new JoystickButton(driverController, 3);
 
   public double GetRawDriverAxis(int axis) {
     return driverController.getRawAxis(axis);

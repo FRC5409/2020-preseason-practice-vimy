@@ -9,9 +9,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 
 /**
@@ -19,10 +17,11 @@ import frc.robot.commands.TankDrive;
  */
 public class DriveTrain extends Subsystem {
 
-  TalonSRX m_leftDriveFront = new TalonSRX(RobotMap.m_leftDriveFront_ID);
-  TalonSRX m_leftDriveRear = new TalonSRX(RobotMap.m_leftDriveRear_ID);
-  TalonSRX m_rightDriveFront = new TalonSRX(RobotMap.m_rightDriveFront_ID);
-  TalonSRX m_rightDriveRear = new TalonSRX(RobotMap.m_rightDriveRear_ID);
+  TalonSRX m_leftDriveFront = new TalonSRX(20);
+  TalonSRX m_leftDriveRear = new TalonSRX(21);
+  TalonSRX m_rightDriveFront = new TalonSRX(22);
+  TalonSRX m_rightDriveRear = new TalonSRX(23);
+
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 

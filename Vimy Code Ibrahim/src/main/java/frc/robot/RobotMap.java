@@ -14,16 +14,8 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-
-	public static final int m_leftDriveFront_ID = 20;
-	public static final int m_leftDriveRear_ID = 21;
-  public static final int m_rightDriveFront_ID = 22;
-  public static final int m_rightDriveRear_ID = 23;
-
-  public static final int driverControllerPort = 1;
   public static final int leftStickY = 1;
   public static final int rightStickY = 5;
-  public static final int buttonX = 3;
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
