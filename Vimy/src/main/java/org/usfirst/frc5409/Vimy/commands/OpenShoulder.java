@@ -7,16 +7,14 @@
 
 package org.usfirst.frc5409.Vimy.commands;
 
-import org.usfirst.frc5409.Vimy.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-public class TankDrive extends Command {
-  public TankDrive() {
+public class OpenShoulder extends Command {
+  public OpenShoulder() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.driveTrain);
+    requires(Shoulder);
   }
- 
+
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
@@ -25,11 +23,6 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftStickY = Robot.oi.GetDriverRawAxis(0);
-    double rightStickY = Robot.oi.GetDriverRawAxis(1);
-
-    Robot.driveTrain.setLeftMotor(leftStickY);
-    Robot.driveTrain.setRightMotor(rightStickY);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -41,14 +34,11 @@ public class TankDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.driveTrain.setLeftMotor(0);
-    Robot.driveTrain.setRightMotor(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }
