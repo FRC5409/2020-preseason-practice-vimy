@@ -7,12 +7,14 @@
 
 package org.usfirst.frc5409.Vimy.commands;
 
+import org.usfirst.frc5409.Vimy.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class OpenShoulder extends Command {
   public OpenShoulder() {
     // Use requires() here to declare subsystem dependencies
-    requires(Shoulder);
+    requires(Robot.shoulder);
   }
 
   // Called just before this Command runs the first time
