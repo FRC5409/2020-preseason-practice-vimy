@@ -4,8 +4,8 @@ import org.usfirst.frc5409.Vimy.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class TankDrive extends Command {
-  public TankDrive() {
+public class Drive extends Command {
+  public Drive() {
     requires(Robot.driveTrain);
   }
 
