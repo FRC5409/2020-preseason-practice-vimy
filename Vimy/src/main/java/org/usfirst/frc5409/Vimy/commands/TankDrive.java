@@ -7,22 +7,28 @@
 
 package org.usfirst.frc5409.Vimy.commands;
 
+import org.usfirst.frc5409.Vimy.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class TankDrive extends Command {
   public TankDrive() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.driveTrain);
   }
 
-  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double leftStickY = Robot.oi.getDriverRawAxis(1);
+    double rightStickY = Robot.oi.getDriverRawAxis(0);
+
+    Robot.driveTrain.setLeftMotors(leftStickY*0.5);
+    Robot.driveTrain.setRightMotors(rightStickY*0.5);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -34,11 +40,14 @@ public class TankDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.driveTrain.setLeftMotor(0);
+    Robot.driveTrain.setRightMotor(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    this.end();
   }
 }
