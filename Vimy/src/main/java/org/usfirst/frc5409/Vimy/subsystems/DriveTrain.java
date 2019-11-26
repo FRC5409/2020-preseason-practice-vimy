@@ -125,14 +125,14 @@ public class DriveTrain extends Subsystem {
 
         // Set the default command for a subsystem here.
         
-        //setDefaultCommand(new TankDrive());
-        setDefaultCommand(new ArcadeDrive());
+        setDefaultCommand(new TankDrive());
+        //setDefaultCommand(new ArcadeDrive());
     }
 
     //Arcade Drive
-    public void standardDrive(double move, double turn){
-        drive.arcadeDrive(move, turn);
-    }
+    // public void standardDrive(double move, double turn){
+    //     drive.arcadeDrive(move, turn);
+    // }
 
     
     //Tank Drive

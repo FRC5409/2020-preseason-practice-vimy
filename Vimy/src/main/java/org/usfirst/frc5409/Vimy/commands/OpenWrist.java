@@ -11,10 +11,10 @@ import org.usfirst.frc5409.Vimy.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ArcadeDrive extends Command {
-  public ArcadeDrive() {
+public class OpenWrist extends Command {
+  public OpenWrist() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.driveTrain);
+    requires(Robot.wrist);
   }
 
   // Called just before this Command runs the first time
@@ -25,9 +25,6 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double move = Robot.oi.driveStick.getY();
-    double turn = Robot.oi.driveStick.getX();
-    //Robot.driveTrain.standardDrive(move, turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()

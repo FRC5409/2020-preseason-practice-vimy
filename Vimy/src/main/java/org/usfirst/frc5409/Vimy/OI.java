@@ -71,6 +71,7 @@ public class OI {
 
         controlStick = new Joystick(1);
         
+        //Initialize commands with Joystick buttons
         joystickButton9 = new JoystickButton(controlStick, 4);
         joystickButton9.whileHeld(new AutonomousCommand());
         joystickButton8 = new JoystickButton(controlStick, 3);
