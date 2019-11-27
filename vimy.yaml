@@ -97,7 +97,7 @@ Children:
           name: Right Motor
           type: PIDOutput
           validators: [RobotDrive2, ChildDropdownSelected]
-          value: m_rightDriveFront_talonSRX_C22
+          value: right_canSpeedGroup
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Left Motor: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -105,7 +105,7 @@ Children:
           name: Left Motor
           type: PIDOutput
           validators: [RobotDrive2, ChildDropdownSelected]
-          value: m_leftDriveFront_talonSRX_C20
+          value: left_canSpeedGroup
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
         Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
@@ -274,7 +274,7 @@ Children:
             default: '2'
             name: CAN ID
             validators: &id021 [CANID]
-            value: '31'
+            value: '2'
           MOTOR TYPE: !!robotbuilder.data.properties.ChoicesProperty
             choices: &id022 [kBrushless, kBrushed]
             default: kBrushless
@@ -300,7 +300,7 @@ Children:
             default: '2'
             name: CAN ID
             validators: *id021
-            value: '30'
+            value: '1'
           MOTOR TYPE: !!robotbuilder.data.properties.ChoicesProperty
             choices: *id022
             default: kBrushless
@@ -388,7 +388,7 @@ Children:
         name: Output
         type: PIDOutput
         validators: &id027 [ChildDropdownSelected]
-        value: m_shoulderMaster_SparkMax_C30
+        value: shoulder_SparkMaxGroup
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
       Maximum Input: !!robotbuilder.data.properties.DoubleProperty {default: 5, name: Maximum Input,
@@ -731,7 +731,7 @@ Children:
           validators: null
           value: '1'
       Base: PowerDistributionPanel
-      Name: PowerDistributionPanel 1
+      Name: powerDistributionPanel1
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
