@@ -71,7 +71,7 @@ public class EndEffector extends Subsystem {
 
     }
 
-    public void setEndEffectors (int direction){
+    public void setWheels (int direction){
         m_effectorWheels_victorSPX_C14.set(ControlMode.PercentOutput, direction);
     }
     
