@@ -9,8 +9,8 @@ package org.usfirst.frc5409.Vimy.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class OpenWrist extends Command {
-  public OpenWrist() {
+public class ElbowLevelThree extends Command {
+  public ElbowLevelThree() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

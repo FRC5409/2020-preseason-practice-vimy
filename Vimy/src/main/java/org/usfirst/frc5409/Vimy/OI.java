@@ -41,8 +41,8 @@ public class OI {
         joystickButton2 = new JoystickButton(driveStick, 2);
         joystickButton2.whileHeld(new AutonomousCommand());
         joystickButton1 = new JoystickButton(driveStick, 1);
-        joystickButton1.whileHeld(new AutonomousCommand());
-
+        joystickButton1.whenPressed(new ClimbLevelThree());
+        
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
     }
 
