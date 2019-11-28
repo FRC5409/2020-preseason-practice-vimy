@@ -7,14 +7,12 @@
 
 package org.usfirst.frc5409.Vimy.commands;
 
-import org.usfirst.frc5409.Vimy.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-public class OpenWrist extends Command {
-  public OpenWrist() {
+public class WristLevel3 extends Command {
+  public WristLevel3() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.wrist);
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time

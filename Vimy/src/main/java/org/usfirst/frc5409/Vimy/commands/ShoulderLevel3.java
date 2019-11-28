@@ -11,8 +11,8 @@ import org.usfirst.frc5409.Vimy.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class OpenShoulder extends Command {
-  public OpenShoulder() {
+public class ShoulderLevel3 extends Command {
+  public ShoulderLevel3() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.shoulder);
   }
@@ -42,5 +42,6 @@ public class OpenShoulder extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
