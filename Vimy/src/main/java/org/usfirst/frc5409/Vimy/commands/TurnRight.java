@@ -9,9 +9,9 @@ package org.usfirst.frc5409.Vimy.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class MoveSequence extends CommandGroup {
+public class TurnRight extends CommandGroup {
   //Command group for a right turn that can be used in conjunction with encoders to change values for precise pathing
-  public MoveSequence() {
+  public TurnRight() {
     //Moves forward at half speed for two seconds
     addSequential(new Move(2,0.5,0.5));
     //Turn to the right at three quarters speed for five seconds

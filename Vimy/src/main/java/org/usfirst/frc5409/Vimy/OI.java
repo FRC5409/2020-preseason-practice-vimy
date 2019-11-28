@@ -96,7 +96,7 @@ public class OI {
         joystickButton3 = new JoystickButton(driveStick, 3);
         joystickButton3.whileHeld(new AutonomousCommand());
         //Launches MoveSequence command group
-        joystickButton3.whenPressed(new MoveSequence());
+        joystickButton3.whenPressed(new TurnRight());
         joystickButton2 = new JoystickButton(driveStick, 2);
         joystickButton2.whileHeld(new AutonomousCommand());
         joystickButton1 = new JoystickButton(driveStick, 1);
