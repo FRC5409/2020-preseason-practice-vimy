@@ -125,4 +125,7 @@ public class Robot extends TimedRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
     }
+
+	public static void setWheels(int i) {
+	}
 }
