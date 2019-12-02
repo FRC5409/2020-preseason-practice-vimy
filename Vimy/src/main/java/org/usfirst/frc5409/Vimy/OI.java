@@ -93,6 +93,8 @@ public class OI {
         joystickButton5.whileHeld(new AutonomousCommand());
         joystickButton4 = new JoystickButton(driveStick, 4);
         joystickButton4.whileHeld(new AutonomousCommand());
+        //Launches MoveShoulder command
+        joystickButton4.whenPressed(new MoveShoulder(2, 0.5));
         joystickButton3 = new JoystickButton(driveStick, 3);
         joystickButton3.whileHeld(new AutonomousCommand());
         //Launches MoveSequence command group
