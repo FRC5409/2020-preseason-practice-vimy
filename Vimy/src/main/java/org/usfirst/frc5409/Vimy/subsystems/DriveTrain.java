@@ -139,8 +139,15 @@ public class DriveTrain extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void manualDrive(double rightTrigger, double leftTrigger, double turn) {
-        double accelerate = rightTrigger - leftTrigger;
+    /**
+     * This function sets 3 axis'. One is used for acceleration (forwards drive), one is used for
+     * deceleration (backwards drive), one is used for turning (left & right rotation)
+     * @param acceleration : Set this parameter to the axis that will accelerate the robot.
+     * @param deceleration : Set this parameter to the axis that will decelerate the robot.
+     * @param turn : Set this parameter to the axis that will rotate the robot.
+     */
+    public void manualDrive(double acceleration, double deceleration, double turn) {
+        double accelerate = acceleration - deceleration;
         robotDiffDrive.arcadeDrive(turn, accelerate);
     }
 }
