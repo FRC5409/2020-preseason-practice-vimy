@@ -92,7 +92,7 @@ public class OI {
         joystickButton4 = new JoystickButton(driveStick, 4);
         joystickButton4.whileHeld(new AutonomousCommand());
         joystickButton3 = new JoystickButton(driveStick, 3);
-        joystickButton3.whileHeld(new AutonomousCommand());
+        joystickButton3.whenPressed(new ArcadeDrive());
         joystickButton2 = new JoystickButton(driveStick, 2);
         joystickButton2.whileHeld(new AutonomousCommand());
         joystickButton1 = new JoystickButton(driveStick, 1);
