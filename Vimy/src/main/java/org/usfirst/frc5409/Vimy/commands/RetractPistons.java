@@ -7,17 +7,20 @@
 
 package org.usfirst.frc5409.Vimy.commands;
 
+import org.usfirst.frc5409.Vimy.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
-public class WristLevel3 extends Command {
-  public WristLevel3() {
+public class RetractPistons extends Command {
+  public RetractPistons() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.climber);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.climber.retract();
   }
 
   // Called repeatedly when this Command is scheduled to run

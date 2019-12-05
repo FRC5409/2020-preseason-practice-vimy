@@ -9,16 +9,13 @@ package org.usfirst.frc5409.Vimy.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class ClimbLevel3 extends CommandGroup {
+public class Climb extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public ClimbLevel3() {
+  public Climb() {
 
-    addSequential(new ShoulderLevel3());
-    addSequential(new ElbowLevel3());
-    addSequential(new WristLevel3());
-    addSequential(new PneumaticPistonsLevel3());
+    
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());

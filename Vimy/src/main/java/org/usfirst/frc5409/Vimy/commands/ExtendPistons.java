@@ -9,17 +9,19 @@ package org.usfirst.frc5409.Vimy.commands;
 
 import org.usfirst.frc5409.Vimy.Robot;
 
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ShoulderLevel3 extends Command {
-  public ShoulderLevel3() {
+public class ExtendPistons extends Command {
+  public ExtendPistons() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.shoulder);
+    requires(Robot.climber);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.climber.extend();
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -42,6 +44,5 @@ public class ShoulderLevel3 extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }

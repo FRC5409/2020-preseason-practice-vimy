@@ -82,6 +82,12 @@ public class Climber extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    public void extend(){
+        d_rightClimbSolenoid.set(DoubleSolenoid.Value.kForward);
+        d_leftClimbSoleniod.set(DoubleSolenoid.Value.kForward);
+    }
+    public void retract(){
+        d_rightClimbSolenoid.set(DoubleSolenoid.Value.kReverse);
+        d_leftClimbSoleniod.set(DoubleSolenoid.Value.kReverse);
+    }
 }
-

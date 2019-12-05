@@ -73,10 +73,10 @@ public class Pneumatics extends Subsystem {
     // here. Call these from Commands.
 
     //Boolean to extend and retract the pneumatic pistons
-    public void extend(){
+    public void compressAir(){
         compressor1.setClosedLoopControl(true);
     }
-    public void retract(){
+    public void releaseAir(){
         compressor1.setClosedLoopControl(false);
     }
 

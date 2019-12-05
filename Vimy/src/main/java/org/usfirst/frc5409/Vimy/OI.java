@@ -87,11 +87,11 @@ public class OI {
         joystickButton4 = new JoystickButton(driveStick, 4);
         joystickButton4.whileHeld(new AutonomousCommand());
         joystickButton3 = new JoystickButton(driveStick, 3);
-        joystickButton3.whileHeld(new AutonomousCommand());
+        joystickButton3.whenPressed(new RetractPistons());
         joystickButton2 = new JoystickButton(driveStick, 2);
-        joystickButton2.whileHeld(new AutonomousCommand());
+        joystickButton2.whenPressed(new ExtendPistons());
         joystickButton1 = new JoystickButton(driveStick, 1);
-        joystickButton1.whenPressed(new ClimbLevel3());
+        joystickButton1.whenPressed(new Climb());
 
 
         // SmartDashboard Buttons
