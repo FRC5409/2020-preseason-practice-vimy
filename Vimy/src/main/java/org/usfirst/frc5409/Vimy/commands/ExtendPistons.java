@@ -2,16 +2,16 @@ package org.usfirst.frc5409.Vimy.commands;
 
 import org.usfirst.frc5409.Vimy.Robot;
 
-import edu.wpi.first.hal.sim.mockdata.RoboRioDataJNI;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ShoulderLevelThree extends Command {
-  public ShoulderLevelThree() {
-    requires(Robot.shoulder);
+public class ExtendPistons extends Command {
+  public ExtendPistons() {
+    requires(Robot.climber);
   }
 
   @Override
   protected void initialize() {
+    Robot.climber.extend();
   }
 
   @Override
@@ -25,6 +25,7 @@ public class ShoulderLevelThree extends Command {
 
   @Override
   protected void end() {
+  
   }
 
   @Override

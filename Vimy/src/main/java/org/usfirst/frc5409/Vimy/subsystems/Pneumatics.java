@@ -26,12 +26,7 @@ public class Pneumatics extends Subsystem {
     public void periodic() {
     
     }
-    public void Extend(){
-        compressor1.setClosedLoopControl(true);
-    }
-    public void Retract(){
-        compressor1.setClosedLoopControl(false);
-    }
+ 
 
 }
 
