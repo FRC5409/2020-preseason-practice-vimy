@@ -100,7 +100,9 @@ public class Elbow extends PIDSubsystem {
 
     @Override
     public void periodic() {
+        //Convert elbow encoder voltage value to angles
         elbowPositionSensorAngle = (s_elbowAbsoluteEncoder_A1.getVoltage() - 0.5) / 4 * 360 - 90;
+        //Setting up if statement to transition from 0 to 360
         if (elbowPositionSensorAngle < 0) {
             elbowPositionSensorAngle += 360;
         }

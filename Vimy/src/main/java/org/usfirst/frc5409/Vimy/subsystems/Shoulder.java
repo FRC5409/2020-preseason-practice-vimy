@@ -127,7 +127,9 @@ public class Shoulder extends PIDSubsystem {
 
     @Override
     public void periodic() {
+        //Feeding in shoulder encoder voltage values to convert them to degrees
         shoulderPositionSensorAngle = (s_shoulderAbsoluteEncoder_A0.getVoltage() - 0.5) / 4 * 360 - 90;
+        //Setting up if statement to transition from 0 to 360
         if (shoulderPositionSensorAngle < 0) {
             shoulderPositionSensorAngle += 360;
         }

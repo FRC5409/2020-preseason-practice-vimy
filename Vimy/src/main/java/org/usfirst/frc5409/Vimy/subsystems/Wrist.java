@@ -101,7 +101,9 @@ public class Wrist extends PIDSubsystem {
 
     @Override
     public void periodic() {
+        //Formula to conver wrist encoder voltage to angles
         wristPositionSensorAngle = (s_wristAbsoluteEncoder_A2.getVoltage() - 0.5) / 4 * 360 - 90;
+        //Set up transition from 0 to 360
         if (wristPositionSensorAngle < 0) {
             wristPositionSensorAngle += 360;
         }
