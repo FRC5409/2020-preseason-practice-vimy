@@ -29,6 +29,7 @@ public class OI {
     public double GetDriverRawAxis(int axis){
         return driverController.getRawAxis(axis);
     }
+//getting axis values from joystick 
    
      //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
