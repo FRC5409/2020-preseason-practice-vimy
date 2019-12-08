@@ -50,11 +50,10 @@ public class EndEffectorMove extends Command {
        setInverted(); 
     }
 
-    void setInverted(){
+Rd setInverted(){
         int button6 = Robot.oi.joystickButton6;
         Robot.endEffector.setWheels(-button6);
-    }
-
+    }  
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
@@ -72,5 +71,7 @@ public class EndEffectorMove extends Command {
     @Override
     protected void interrupted() {
         end(); 
-    }
-}
+    }    }
+
+    // Ced just beforethis Command runs the firs
+    //setting wheels to zero to help stop motors. 
