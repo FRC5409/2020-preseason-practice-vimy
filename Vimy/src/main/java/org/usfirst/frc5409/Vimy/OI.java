@@ -24,10 +24,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    Joystick driverController = new Joystick(1);
-    
     public double GetDriverRawAxis(int axis){
-        return driverController.getRawAxis(axis);
+        return controlStick.getRawAxis(axis);
     }
 //getting axis values from joystick 
    
