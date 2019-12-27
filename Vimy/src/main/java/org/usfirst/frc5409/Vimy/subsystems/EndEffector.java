@@ -69,8 +69,8 @@ public class EndEffector extends Subsystem {
 
     }
 
-    public void setWheels (int direction){
-        m_effectorWheels_victorSPX_C14.set(ControlMode.PercentOutput, direction);
+    public void setWheels (boolean button5){
+        m_effectorWheels_victorSPX_C14.set(ControlMode.PercentOutput, button5);
     }
     //setting up wheels and vaccuums
     public void setVaccuums (double power){

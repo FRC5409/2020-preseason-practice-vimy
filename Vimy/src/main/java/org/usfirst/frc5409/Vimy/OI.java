@@ -82,14 +82,14 @@ public class OI {
         joystickButton9.whileHeld(new AutonomousCommand());
         joystickButton8 = new JoystickButton(controlStick, 3);
         joystickButton8.whileHeld(new AutonomousCommand());
-        joystickButton7 = new JoystickButton(controlStick, 2);
-        joystickButton7.whileHeld(new AutonomousCommand());
-        joystickButton6 = new JoystickButton(controlStick, 1);
+        joystickButton5 = new JoystickButton(controlStick, 5);
+        joystickButton5.whileHeld(new AutonomousCommand());
+        joystickButton6 = new JoystickButton(controlStick, 6);
         joystickButton6.whileHeld(new EndEffectorMove());
+     
         driveStick = new Joystick(0);
-        
-        joystickButton5 = new JoystickButton(driveStick, 5);
-        joystickButton5.whileHeld(new EndEffectorMove());
+        joystickButton7 = new JoystickButton(driveStick, 5);
+        joystickButton7.whileHeld(new EndEffectorMove());
         joystickButton4 = new JoystickButton(driveStick, 4);
         joystickButton4.whileHeld(new AutonomousCommand());
         joystickButton3 = new JoystickButton(driveStick, 3);

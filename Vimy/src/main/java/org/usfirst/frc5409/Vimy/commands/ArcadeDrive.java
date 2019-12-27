@@ -48,10 +48,6 @@ public class ArcadeDrive extends Command {
 
         Robot.driveTrain.setLeftMotors(leftStickY); 
         Robot.driveTrain.setRightMotors(rightStickY); 
-
-        int button3 = Robot.oi.joystickButton3; 
-
-        Robot.drivetrain.
     }
 
     void StopMotor(){
