@@ -46,15 +46,18 @@ public class EndEffectorMove extends Command {
     @Override
     protected void execute() {
         boolean button5 = Robot.oi.joystickButton5.get();
-       Robot.endEffector.setWheels(button5); 
+        int move = button5 ? 1:0; //conversion of boolean to int
+       Robot.endEffector.setWheels(move); 
        setInverted(); 
     }
 
     public void setInverted(){
         boolean button6 = Robot.oi.joystickButton6.get();
-        Robot.endEffector.setWheels(button6);
+        int invert = button6 ? -1:0; 
+        Robot.endEffector.setWheels(invert);
     }  
-    // Make this return true when this Command no longer needs to run execute()
+    //setting button 6 to be inverted. 
+    
     @Override
     protected boolean isFinished() {
         return false;
