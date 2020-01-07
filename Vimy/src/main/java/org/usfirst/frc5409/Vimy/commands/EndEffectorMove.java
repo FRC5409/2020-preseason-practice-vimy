@@ -45,7 +45,7 @@ public class EndEffectorMove extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        boolean button5 = Robot.oi.joystickButton5.get();
+        boolean button5 = Robot.oi.controlStick.getRawButton(5);
         int move = button5 ? 1:0; //conversion of boolean to int
        Robot.endEffector.setWheels(move); 
        setInverted(); 
