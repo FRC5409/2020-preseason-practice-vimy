@@ -7,17 +7,24 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class Move extends Command {
-  public Move() {
+  double m_time;
+  public Move(final double time) {
+    m_time = time;
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.DriveCode);
+  }
+
+  private void requires(final String drivecode) {
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.driveCode.setLeftMotors(0.5);
+    Robot.driveCode.setRightMotors(0.5);
   }
 
   // Called repeatedly when this Command is scheduled to run

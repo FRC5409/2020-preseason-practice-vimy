@@ -23,7 +23,9 @@ public class Robot extends TimedRobot {
   
   
   
-  public static Object m_oi;
+  public static final String DriveCode = null;
+
+public static Object m_oi;
 
 public static Object driveCode;
 
