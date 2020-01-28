@@ -7,13 +7,20 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class OI extends SubsystemBase {
   /**
    * Creates a new OI.
+ * @return 
    */
-  public OI() {
+  public double OI() {
+private XboxController driverController = new XboxController(RobotMap.DRIVER_CONTROLLER);
+
+public double GetDriverRawAxis(int axis) {
+  return driverController.getRawAxis(axis); 
+}
 
   }
 

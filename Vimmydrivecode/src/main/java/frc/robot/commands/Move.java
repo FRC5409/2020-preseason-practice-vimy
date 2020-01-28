@@ -8,12 +8,9 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.subsystems.RobotMap;
 
-public class TankDrive extends Command {
-  public TankDrive() {
-    requires(Robot.driveCode);
+public class Move extends Command {
+  public Move() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -26,13 +23,8 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftStickY = Robot.m_oi.GetDriverRawAxis(RobotMap.LEFT_STICK_Y);
-    double rightStickY = Robot.m_oi.GetDriverRawAxis(RobotMap.RIGHT_STICK_Y);
-
-    Robot.driveCode.setLeftMotors(leftStickY);
-    Robot.driveCode.setRightMotors(rightStickY);
   }
-`
+
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
@@ -42,17 +34,11 @@ public class TankDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.driveCode.setLeftMotors(0);
-    Robot.driveCode.setRightMotors(0);
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    this.end();
-  
   }
-
-
 }
