@@ -26,8 +26,8 @@ public class TankDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftStickY = Robot.m_oi.GetDriverRawAxis(RobotMap.LEFT_STICK_Y);
-    double rightStickY = Robot.m_oi.GetDriverRawAxis(RobotMap.RIGHT_STICK_Y);
+    double leftStickY = Robot.GetDriverRawAxis(RobotMap.LEFT_STICK_Y);
+    double rightStickY = Robot.GetDriverRawAxis(RobotMap.RIGHT_STICK_Y);
 
     Robot.driveCode.setLeftMotors(leftStickY);
     Robot.driveCode.setRightMotors(rightStickY);

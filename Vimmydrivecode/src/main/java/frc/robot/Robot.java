@@ -121,4 +121,8 @@ private Command m_autonomousCommand;
   @Override
   public void testPeriodic() {
   }
+
+public static double GetDriverRawAxis(int leftStickY) {
+	return 0;
+}
 }
