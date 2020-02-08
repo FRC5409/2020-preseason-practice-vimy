@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2019 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -7,52 +7,48 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.subsystems.RobotMap;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
+import frc.robot.subsystems.DriveCode;
+import frc.robot.RobotContainer;
 
-public class TankDrive extends Command {
-  public TankDrive() {
-    requires(Robot.driveCode);
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+public class TankDrive extends CommandBase {
+  private final DriveCode driveCodeSubsystem;
+  /**
+   * Creates a new TankDrive.
+   */
+  public TankDrive(DriveCode subsystem) {
+    // Use addRequirements() here to declare subsystem dependencies.
+    driveCodeSubsystem = subsystem;
+    addRequirements(driveCodeSubsystem);
   }
 
-  // Called just before this Command runs the first time
+  // Called when the command is initially scheduled.
   @Override
-  protected void initialize() {
+  public void initialize() {
   }
 
-  // Called repeatedly when this Command is scheduled to run
+  // Called every time the scheduler runs while the command is scheduled.
   @Override
-  protected void execute() {
-    double leftStickY = Robot.GetDriverRawAxis(RobotMap.LEFT_STICK_Y);
-    double rightStickY = Robot.GetDriverRawAxis(RobotMap.RIGHT_STICK_Y);
+  public void execute() {
+    double leftStickY = RobotContainer.GetDriverRawAxis(Constants.LEFT_STICK_Y);
+    double rightStickY = RobotContainer.GetDriverRawAxis(Constants.RIGHT_STICK_Y);
 
-    Robot.driveCode.setLeftMotors(leftStickY);
-    Robot.driveCode.setRightMotors(rightStickY);
+    driveCodeSubsystem.setLeftMotors(leftStickY);
+    driveCodeSubsystem.setRightMotors(rightStickY);
   }
-`
-  // Make this return true when this Command no longer needs to run execute()
+
+  // Called once the command ends or is interrupted.
   @Override
-  protected boolean isFinished() {
+  public void end(boolean interrupted) {
+    driveCodeSubsystem.setLeftMotors(0);
+    driveCodeSubsystem.setRightMotors(0);
+  }
+
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
     return false;
   }
-
-  // Called once after isFinished returns true
-  @Override
-  protected void end() {
-    Robot.driveCode.setLeftMotors(0);
-    Robot.driveCode.setRightMotors(0);
-  }
-
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
-    this.end();
-  
-  }
-
-
 }
+
